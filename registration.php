@@ -1,30 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        main{
-            margin-top:104px;
+        main {
+            width: 100vw;
+            height: 100vh;
+            background-color: #DEB887;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .containerFormRegister {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 25vw;
+            height: 50vh;
+            row-gap: 0.8rem;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 2rem;
+            background-color: white;
+        }
+
+        .btnRegister {
+            height: 1.5rem;
+            background-color: #eaa856;
+            border: none;
+            cursor: pointer;
+            height: 2.5rem;
+        }
+
+        .inputRegister {
+            height: 2.5rem;
+            border: none;
+            background-color: #e0e0e0;
+            padding-left: 0.5rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            color: blue;
         }
     </style>
 </head>
+
 <body>
     <main>
-        <?php include('header.php'); ?>    
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-            <label for="first_name">First name</label>
-            <input type="text" id="first_name" name="first_name" required>
-            <label for="last_name">Last name</label>
-            <input type="text" id="last_name" name="last_name" required>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-            <label for="psw">Password</label>
-            <input type="password" id="psw" name="psw" required>
-            <label for="psw2">Conferma password</label>
-            <input type="password" id="psw2" name="psw2" required>
-            <input type="submit" value="Submit">
+        <?php include('header.php'); ?>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="containerFormRegister">
+            <input type="text" id="first_name" name="first_name" required placeholder="First Name" class="inputRegister">
+            <input type="text" id="last_name" name="last_name" required placeholder="Last Name" class="inputRegister">
+            <input type="email" id="email" name="email" required placeholder="Email" class="inputRegister">
+            <input type="password" id="psw" name="psw" required placeholder="Password" class="inputRegister">
+            <input type="password" id="psw2" name="psw2" required placeholder="Conferma Password" class="inputRegister">
+            <input type="submit" value="Submit" class="btnRegister">
+            <a href="login.php">Hai già un account? Loggati qua</a>
         </form>
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -71,8 +110,9 @@
             $conn->close();
         }
         ?>
-        <br>
-        <a href="login.php">Hai già un account? Loggati qua</a>        
+
+
     </main>
 </body>
+
 </html>

@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
-        main{
+        main {
             width: 100vw;
             height: 100vh;
             background-color: #DEB887;
@@ -36,21 +35,21 @@
             height: 2.5rem;
         }
 
-        .inputLogin{
+        .inputLogin {
             height: 2.5rem;
             border: none;
             background-color: #e0e0e0;
             padding-left: 0.5rem;
         }
-        a{
+
+        a {
             text-decoration: none;
             color: black;
         }
 
-        a:hover{
+        a:hover {
             color: blue;
         }
-       
     </style>
 </head>
 
@@ -60,7 +59,7 @@
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="containerFormLogin">
             <input type="email" name="email" id="email" required placeholder="Email" class="inputLogin">
             <input type="password" name="password" id="password" required placeholder="Password" class="inputLogin">
-            <input type="submit" value="Login" class="btnLogin" >
+            <input type="submit" value="Login" class="btnLogin">
             <a href="registration.php">Non hai un account? Registrati qua</a>
         </form>
         <?php
@@ -100,8 +99,8 @@
             $conn->close();
         }
         ?>
-        
-      
+
+
     </main>
 </body>
 
