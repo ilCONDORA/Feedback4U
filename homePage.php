@@ -17,15 +17,49 @@
       margin-top: 104px;
     }
 
+    .mainContainer {
+      display: flex;
+      background-color: #C1C1C1;
+      height: 60vh;
+      padding: 1rem;
+    }
+
+    .card1{
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .card1 a{
+      display: flex;
+      align-items: center;
+      margin-top: 1.5rem;
+      background-color: #DEB887;
+      width:16.5rem;
+      justify-content: center;
+      text-decoration: none;
+      color: black;
+      border: 2px solid black;
+      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+      height: 3.5rem;
+    }
+
+    .imgLogo{
+      width: 15rem;
+      margin-bottom: 1.2rem;
+    }
+
     .landing {
-      background-image: url('./images/landing.jpg');
+      width: 70%;
+      background-image: url('./images/heroSection.png');
       background-size: cover;
-      height: 80vh;
       display: flex;
       flex-direction: row;
       align-items: end;
       justify-content: center;
-      padding: 2rem;
+    
     }
 
     .landing h1 {
@@ -36,17 +70,7 @@
       background-color: rgba(0, 0, 0, 0.5);
     }
 
-    .landing a {
-      color: white;
-      padding: 25px;
-      border: 0;
-      border-radius: 20px;
-      font-size: x-large;
-      background-color: #17c94de1;
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
+   
 
     article {
       display: flex;
@@ -67,25 +91,27 @@
 <body>
   <main>
     <?php include('header.php'); ?>
-    <section class="landing">
-      <h1>
-        Feedback4U: visualizza voti e fornisci feedback alle materie.
-      </h1>
-      <?php
-      // Start the session
-      if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-      }
+    <section class="mainContainer">
+      <div class="card1">
+        <img src="./images/logo - Copia.png" alt="" class="imgLogo">
+        <h2>
+         Visualizza voti e fornisci feedback alle materie.
+        </h2>
+        <?php
+        // Start the session
+        if (session_status() == PHP_SESSION_NONE) {
+          session_start();
+        }
 
-      if (isset($_SESSION["email"])) {
-        // The user is logged in
-        echo '<a href="accountPage.php"
+        if (isset($_SESSION["email"])) {
+          // The user is logged in
+          echo '<a href="accountPage.php"
               ><b>Vai subito al tuo account</b
               ><img src="./svg/user-2.svg" alt="bottone account" style="margin-left: 12px; height: 40px;"
             /></a>';
-      } else {
-        // The user is not logged in
-        echo '<a href="login.php"
+        } else {
+          // The user is not logged in
+          echo '<a href="login.php"
               ><b>Vai subito al tuo account</b>
               <img
                 src="./svg/user-2.svg"
@@ -93,9 +119,14 @@
                 style="margin-left: 12px; height: 40px"
               />
             </a>';
-      }
-      ?>
+        }
+        ?>
+      </div>
+      <div class="landing">
+
+      </div>
     </section>
+
     <section style="background-color: rgb(205, 205, 205); padding-bottom: 20px">
       <h2 style="display: flex; justify-content: center; padding: 70px 0 35px 0">
         A cosa serve Feedback4U

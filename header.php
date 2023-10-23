@@ -22,7 +22,7 @@
         background-color: burlywood;
         justify-content: space-between;
         padding: 20px 25px;
-        backdrop-filter: blur(6px);
+        backdrop-filter: blur(10px);
       }
       .logo {
         height: 60px;
