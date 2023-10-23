@@ -19,7 +19,7 @@ include 'connection.php';
         section {
             display: flex;
             padding: 2rem;
-
+            height: 70vh;
         }
 
         .card1 {
@@ -81,9 +81,9 @@ include 'connection.php';
                             while ($row = $result->fetch_assoc()) {
                                 echo"
                                         <div style='display: flex; flex-direction:column; line-height: 1.5;'>
-                                            <p>Voto: ".$row["vote"]."</p>
-                                            <p>Materia: ".$row["subject"]."</p>
-                                            <p>Data: ".$row["date"]."</p>
+                                            <p class='datiStudenti'>Voto: ".$row["vote"]."</p>
+                                            <p class='datiStudenti'>Materia: ".$row["subject"]."</p>
+                                            <p class='datiStudenti'>Data: ".$row["date"]."</p>
                                             <a href='feedback.php?vote_id=".$row["idVote"]."'>Lascia un feedback!</a>
                                             <br>
                                             <hr>
