@@ -84,7 +84,7 @@ include 'connection.php';
                                             <p class='datiStudenti'>Voto: ".$row["vote"]."</p>
                                             <p class='datiStudenti'>Materia: ".$row["subject"]."</p>
                                             <p class='datiStudenti'>Data: ".$row["date"]."</p>
-                                            <a href='feedback.php?vote_id=".$row["idVote"]."'>Lascia un feedback!</a>
+                                            <a style='text-decoration: none;color: #f9a339;;cursor:pointer' href='feedback.php?vote_id=".$row["idVote"]."'><b>Lascia un feedback!</b></a>
                                             <br>
                                             <hr>
                                             <br>

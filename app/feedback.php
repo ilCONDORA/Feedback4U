@@ -42,6 +42,7 @@ include 'connection.php';
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             height: 2.5rem;
             width: 8rem;
+            margin-bottom: 1rem;
         }
         .btnSubmit:hover{
             cursor: pointer;
