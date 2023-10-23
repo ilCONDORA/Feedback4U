@@ -25,8 +25,8 @@
     .mainContainer {
       display: flex;
       background-color: #C1C1C1;
-      height: 60vh;
-      padding: 1rem;
+      height: 65vh;
+      padding: 2rem;
     }
 
     .card1{
