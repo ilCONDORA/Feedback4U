@@ -44,12 +44,14 @@
             session_start();
           }
           if (isset($_SESSION["email"])) {
+            $first_name = $_SESSION['name'];
             // The user is logged in
-            echo '<a href="?logout=1" style="margin-right:20px"><img src="./svg/logout.svg" alt="bottone logout" class="svg"
+            echo "<a href='?logout=1' style='margin-right:20px'><img src='./svg/logout.svg' alt='bottone logout' class='svg'
             /></a>
-          <a href="accountPage.php"
-            ><img src="./svg/user-2.svg" alt="bottone account" class="svg"
-          /></a>';
+            <p>Benvenuto $first_name</p>
+          <a href='accountPage.php'
+            ><img src='./svg/user-2.svg' alt='bottone account' class='svg'
+          /></a>";
           
           } else {
             // The user is not logged in
