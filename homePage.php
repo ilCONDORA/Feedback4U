@@ -46,6 +46,11 @@
       height: 3.5rem;
     }
 
+    .card1 a:hover{
+      background-color: #f9a339;
+      transition-duration: 0.3s;
+    }
+
     .imgLogo{
       width: 15rem;
       margin-bottom: 1.2rem;
