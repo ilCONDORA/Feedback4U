@@ -6,11 +6,11 @@
 include 'connection.php';
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it-IT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback Page</title>
+    <title>Feedback Page Feedback4U</title>
     <style>
         main{
             margin-top:104px;
@@ -20,25 +20,25 @@ include 'connection.php';
 <body>
     <main>
     <?php include('header.php'); ?>
-        <?php
-            if (isset($_GET['vote_id'])) {
-                $idVote = $_GET['vote_id'];
-                $sql = "SELECT idVote, vote, date, subject from votes v left join users u on u.idUser = v.idUser right join subjects s on s.idSubject = v.idSubject where v.idVote = '$idVote'";
-                $result = $conn->query($sql);
-                
-                if ($result->num_rows > 0) {
-                    $row = $result->fetch_assoc();
-                    $vote = $row["vote"];
-                    $subject = $row["subject"];
-                    $date = $row["date"];
-                } else {
-                    echo "Nessun voto trovato";
-                }
+    <?php
+        if (isset($_GET['vote_id'])) {
+            $idVote = $_GET['vote_id'];
+            $sql = "SELECT idVote, vote, date, subject from votes v left join users u on u.idUser = v.idUser right join subjects s on s.idSubject = v.idSubject where v.idVote = '$idVote'";
+            $result = $conn->query($sql);
+            
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                $vote = $row["vote"];
+                $subject = $row["subject"];
+                $date = $row["date"];
             } else {
-                echo "ID del voto mancante";
-                exit; // Esci se l'ID del voto è mancante
+                echo "<p>Nessun voto trovato</p>";
             }
-        ?>
+        } else {
+            echo "<p>ID del voto mancante</p>";
+            exit; // Esci se l'ID del voto è mancante
+        }
+    ?>
         <h3>Dettagli del Voto</h3>
             <p>Voto: <?php echo $vote; ?></p>
             <p>Materia: <?php echo $subject; ?></p>
@@ -72,15 +72,15 @@ include 'connection.php';
                         $sql3 = "INSERT INTO feedbacks (idUser, idSubject, stars, message) VALUES ('$idUser', '$idSubject', '$rating', '$message')";
                         $result3 = $conn->query($sql3);
                         if ($result3) {
-                            echo "Feedback inserito con successo!";
+                            echo "<p>Feedback inserito con successo!</p>";
                         } else {
-                            echo "Errore nell'inserimento del feedback: " . $conn->error;
+                            echo "<p>Errore nell'inserimento del feedback: $conn->error</p>";
                         }
                     } else {
-                        echo "Errore materie!";
+                        echo "<p>Errore materie!</p>";
                     }
                 } else {
-                    echo "Errore";
+                    echo "<p>Errore</p>";
                 }
             }
         ?>

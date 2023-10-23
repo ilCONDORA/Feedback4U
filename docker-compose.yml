@@ -1,0 +1,25 @@
+version: '3'
+services:
+  # Servizio web
+  web:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./app:/var/www/html/
+    depends_on:
+      - db
+  # Servizio database
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: feedback4u
+      MYSQL_USER: fb4uAdmin
+      MYSQL_PASSWORD: fb4uAdminfb4uAdminx2
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./feedback4udump.sql:/docker-entrypoint-initdb.d/feedback4udump.sql
+    command: --default-authentication-plugin=mysql_native_password
+volumes:
+  db_data:
