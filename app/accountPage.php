@@ -16,7 +16,7 @@ include 'connection.php';
             margin-top: 104px;
         }
 
-        section {
+        .sectionAccount {
             display: flex;
             padding: 2rem;
             height: 70vh;
@@ -39,7 +39,7 @@ include 'connection.php';
 <body>
     <main>
         <?php include('header.php'); ?>
-        <section>
+        <section class="sectionAccount">
             <div style="width: 50%;">
                 <div class="card1">
                     <h1>Account Page</h1>
