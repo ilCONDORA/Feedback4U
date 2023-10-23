@@ -44,6 +44,7 @@ CREATE TABLE `votes` (
   CONSTRAINT `FK_Votes_Subject` FOREIGN KEY (`idSubject`) REFERENCES `subjects` (`idSubject`),
   CONSTRAINT `FK_Votes_Users` FOREIGN KEY (`idUser`) REFERENCES `users` (`idUser`)
 );
+/* insert into votes (vote, idUser, idSubject, date) values (9, 2, 1,"2023-10-23"); */
 
 DROP TABLE IF EXISTS `feedbacks`;
 CREATE TABLE `feedbacks` (
