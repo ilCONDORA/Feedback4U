@@ -69,7 +69,7 @@
     <?php include('header.php'); ?>
     <section class="landing">
       <h1>
-        FeedbackForU: visualizza voti e fornisci feedback alle materie.
+        Feedback4U: visualizza voti e fornisci feedback alle materie.
       </h1>
       <?php
       // Start the session
@@ -88,7 +88,7 @@
         echo '<a href="login.php"
               ><b>Vai subito al tuo account</b>
               <img
-                src="./svg/login.svg"
+                src="./svg/user-2.svg"
                 alt="bottone login"
                 style="margin-left: 12px; height: 40px"
               />

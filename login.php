@@ -13,6 +13,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
         }
 
         .containerFormLogin {
@@ -25,6 +26,7 @@
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             padding: 2rem;
             background-color: white;
+            margin-bottom: 2rem;
         }
 
         .btnLogin {

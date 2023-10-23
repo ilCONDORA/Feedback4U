@@ -54,7 +54,7 @@
           } else {
             // The user is not logged in
             echo '<a href="login.php"
-            ><img src="./svg/login.svg" alt="bottone login" class="svg"
+            ><img src="./svg/user-2.svg" alt="bottone login" class="svg"
           /></a>';
           }
           if (isset($_GET['logout'])) {
