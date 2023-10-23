@@ -19,7 +19,7 @@ include 'connection.php';
         .sectionAccount {
             display: flex;
             padding: 2rem;
-            height: 70vh;
+            min-height: 70vh;
         }
 
         .card1 {
