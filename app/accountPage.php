@@ -81,10 +81,10 @@ include 'connection.php';
                             while ($row = $result->fetch_assoc()) {
                                 echo"
                                         <div style='display: flex; flex-direction:column; line-height: 1.5;'>
-                                            <p>Voto: " . $row["vote"] . "</p>
-                                            <p>Materia: " . $row["subject"] . "</p>
-                                            <p>Data: " . $row["date"] . "</p>
-                                            <a href='feedback.php?vote_id=" . $row["idVote"] . "'>Lascia un feedback!</a>
+                                            <p>Voto: ".$row["vote"]."</p>
+                                            <p>Materia: ".$row["subject"]."</p>
+                                            <p>Data: ".$row["date"]."</p>
+                                            <a href='feedback.php?vote_id=".$row["idVote"]."'>Lascia un feedback!</a>
                                             <br>
                                             <hr>
                                             <br>
@@ -101,11 +101,23 @@ include 'connection.php';
                         $result1 = $conn->query($sql1);
                         if ($result1->num_rows > 0) {
                             while ($row = $result1->fetch_assoc()) {
-                                echo "<div style='display: flex; flex-direction:column; line-height: 1.5;'><p>Studente: " . $row["first_name"] . " " . $row["last_name"] . "</p><p>Email: " . $row["email"] . "</p>";
-                                echo "<p>Voto: " . $row["vote"] . "</p><p>Materia: " . $row["subject"] . "</p><p>Data: " . $row["date"] . "</p><br><hr><br></div>";
+                                echo"
+                                        <div style='display: flex; flex-direction:column; line-height: 1.5;'>
+                                            <p>Studente: ".$row["first_name"]." ".$row["last_name"]."</p>
+                                            <p>Email: ".$row["email"]."</p>
+                                            <p>Voto: ".$row["vote"]."</p>
+                                            <p>Materia: ".$row["subject"]."</p>
+                                            <p>Data: ".$row["date"]."</p>
+                                            <br>
+                                            <hr>
+                                            <br>
+                                        </div>
+                                    ";
                             }
                         } else {
-                            echo "Nessun voto trovato";
+                            echo"
+                                    <p>Nessun voto trovato</p>
+                                ";
                         }
                     }
                     ?>
@@ -120,11 +132,26 @@ include 'connection.php';
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-                            echo "<div style='display: flex; flex-direction:column; line-height: 1.5;'>Studente: " . $row["first_name"] . " " . $row["last_name"] . "<br>Email: " . $row["email"] . "<br>Materia: " . $row["subject"] . "<br>";
-                            echo "<p>Rating: " . $row["stars"] . "</p><p>Feedback:<br><p style='background-color:#eaeaea;margin-top:0.5rem;border: 1px solid black;padding: 0.5rem'> " .  $row["message"] . "</p></p><br><hr><br></div>";
+                            echo"
+                                    <div style='display: flex; flex-direction:column; line-height: 1.5;'>
+                                        <p>Studente: ".$row["first_name"]." ".$row["last_name"]."</p>
+                                        <p>Email: ".$row["email"]."</p>
+                                        <p>Materia: ".$row["subject"]."</p>
+                                        <p>Rating: ".$row["stars"]."</p>
+                                        <article>Feedback:
+                                            <p style='background-color:#eaeaea;margin-top:0.5rem;border: 1px solid black;padding: 0.5rem'> ".$row["message"]."</p>
+                                        </article>
+                                        <br>
+                                        <hr>
+                                        <br>
+                                    </div>
+
+                                ";
+                            echo"
+                                ";
                         }
                     } else {
-                        echo "Nessun voto trovato";
+                        echo "<p>Nessun voto trovato</p>";
                     }
                 }
                 $conn->close();

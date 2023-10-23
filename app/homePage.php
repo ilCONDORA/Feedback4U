@@ -110,25 +110,28 @@
         <?php
         if (isset($_SESSION["email"])) {
           // The user is logged in
-          echo '<a href="accountPage.php"
-              ><b>Vai subito al tuo account</b
-              ><img src="./svg/user-2.svg" alt="bottone account" style="margin-left: 12px; height: 40px;"
-            /></a>';
+          echo'
+                <a href="accountPage.php">
+                  <b>Vai subito al tuo account</b>
+                  <img src="./svg/user-2.svg" alt="bottone account" style="margin-left: 12px; height: 40px;"/>
+                </a>
+              ';
         } else {
           // The user is not logged in
-          echo '<a href="login.php"
-              ><b>Vai subito al tuo account</b>
-              <img
-                src="./svg/user-2.svg"
-                alt="bottone login"
-                style="margin-left: 12px; height: 40px"
-              />
-            </a>';
+          echo'
+                <a href="login.php">
+                  <b>Vai subito al tuo account</b>
+                  <img
+                    src="./svg/user-2.svg"
+                    alt="bottone login"
+                    style="margin-left: 12px; height: 40px"
+                  />
+                </a>
+              ';
         }
         ?>
       </div>
       <div class="landing">
-
       </div>
     </section>
 

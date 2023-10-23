@@ -83,7 +83,7 @@ include 'connection.php';
                 $sql = "SELECT * FROM users WHERE email = '$email'";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
-                    echo "Utente già esistente!";
+                    echo "<p>Utente già esistente!</p>";
                 } else {
                     $hashed_password = password_hash($psw1, PASSWORD_DEFAULT);
                     $sql = "INSERT INTO users (first_name, last_name, email, password, idRole) VALUES ('$first_name', '$last_name', '$email', '$hashed_password', 2)";
@@ -96,11 +96,11 @@ include 'connection.php';
                         echo '<script>window.location.href="homePage.php";</script>';
                         exit();
                     } else {
-                        echo "Error: " . $sql . "<br>" . $conn->error;
+                        echo "<p>Error: " . $sql . "<br>" . $conn->error."</p>";
                     }
                 }
             } else {
-                echo "Le password non corrispondono";
+                echo "<p>Le password non corrispondono</p>";
             }
 
             $conn->close();

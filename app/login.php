@@ -89,19 +89,16 @@ include 'connection.php';
                         echo '<script>window.location.href="homePage.php";</script>';
                         exit();
                     } else {
-                        echo "Password errata";
+                        echo "<p>Password errata</p>";
                     }
                 }
             } else {
-                echo "Utente non trovato!";
+                echo "<p>Utente non trovato!</p>";
             }
 
             $conn->close();
         }
         ?>
-
-
     </main>
 </body>
-
 </html>
