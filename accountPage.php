@@ -73,7 +73,7 @@
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                    echo "studente: ". $row["first_name"]. " ". $row["last_name"]. "<br>email: ". $row["email"]. "<br>";
+                    echo "studente: ". $row["first_name"]. " ". $row["last_name"]. "<br>email: ". $row["email"]. "<br>Materia: ". $row["subject"] . "<br>";
                     echo "Rating: " .$row["stars"]. "<br>Feedback: " .$row["message"]. "<br><br>";
                 }
             } else {

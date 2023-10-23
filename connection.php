@@ -2,7 +2,7 @@
 $servername = "localhost";
 $database = "feedback4u";
 $username = "root";
-$password = "263732";
+$password = "111022";
 $port = 3307;
 
 // Create connection
