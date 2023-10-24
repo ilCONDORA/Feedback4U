@@ -63,9 +63,13 @@ include 'connection.php';
                             echo"
                                     <p class='datiStudenti'>Email: $email</p>
                                 ";
-                        } elseif ($idRole == 1) {
-                            // echo "<div style='margin-top: 1rem'><p>Salve  $first_name</p></div>";
-                        }
+                        } /* elseif ($idRole == 1) {
+                            echo"
+                                    <div style='margin-top: 1rem'>
+                                        <p>Salve  $first_name</p>
+                                    </div>
+                                ";
+                        } */
                     } else {
                         echo"
                                 <p>Non hai effettuato l'accesso.</p>
@@ -128,7 +132,7 @@ include 'connection.php';
                 <?php
                 if ($idRole == 1) {
                     echo "<h2>Feedbacks:</h2><br>";
-                    $sql = "SELECT first_name, last_name, email, subject, stars ,message from feedbacks f inner join users u on u.idUser = f.idUser inner join subjects s on s.idSubject = f.idSubject";
+                    $sql = "SELECT first_name, last_name, email, subject, rating ,message from feedbacks f inner join users u on u.idUser = f.idUser inner join subjects s on s.idSubject = f.idSubject";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
@@ -137,7 +141,7 @@ include 'connection.php';
                                         <p>Studente: ".$row["first_name"]." ".$row["last_name"]."</p>
                                         <p>Email: ".$row["email"]."</p>
                                         <p>Materia: ".$row["subject"]."</p>
-                                        <p>Rating: ".$row["stars"]."</p>
+                                        <p>Rating: ".$row["rating"]."</p>
                                         <article>Feedback:
                                             <p style='background-color:#eaeaea;margin-top:0.5rem;border: 1px solid black;padding: 0.5rem'> ".$row["message"]."</p>
                                         </article>

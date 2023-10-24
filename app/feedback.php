@@ -67,10 +67,14 @@ include 'connection.php';
                 $subject = $row["subject"];
                 $date = $row["date"];
             } else {
-                echo "<p>Nessun voto trovato</p>";
+                echo"
+                        <p>Nessun voto trovato</p>
+                    ";
             }
         } else {
-            echo "<p>ID del voto mancante</p>";
+            echo"
+                    <p>ID del voto mancante</p>
+                ";
             exit; // Esci se l'ID del voto è mancante
         }
         ?>
@@ -113,25 +117,31 @@ include 'connection.php';
                     if ($result2->num_rows > 0) {
                         $row2 = $result2->fetch_assoc();
                         $idSubject = $row2['idSubject'];
-                        $sql3 = "INSERT INTO feedbacks (idUser, idSubject, stars, message) VALUES ('$idUser', '$idSubject', '$rating', '$message')";
+                        $sql3 = "INSERT INTO feedbacks (idUser, idSubject, rating, message) VALUES ('$idUser', '$idSubject', '$rating', '$message')";
                         $result3 = $conn->query($sql3);
                         if ($result3) {
-                            echo "<p>Feedback inserito con successo!</p>";
+                            echo"
+                                    <p>Feedback inserito con successo!</p>
+                                ";
                         } else {
-                            echo "<p>Errore nell'inserimento del feedback: $conn->error</p>";
+                            echo"
+                                    <p>Errore nell'inserimento del feedback: $conn->error</p>
+                                ";
                         }
                     } else {
-                        echo "<p>Errore materie!</p>";
+                        echo"
+                                <p>Errore materie!</p>
+                            ";
                     }
                 } else {
-                    echo "<p>Errore</p>";
+                    echo"
+                            <p>Errore</p>
+                        ";
                 }
             }
             ?>
         </div>
-
         <?php include('footer.php'); ?>
     </main>
 </body>
-
 </html>

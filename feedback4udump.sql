@@ -34,7 +34,7 @@ INSERT INTO `users` VALUES (1,'Admin', 'Admin', 'adminfeedback4u@feedback4u.it',
 DROP TABLE IF EXISTS `votes`;
 CREATE TABLE `votes` (
   `idVote` int NOT NULL AUTO_INCREMENT,
-  `vote` int DEFAULT NULL,
+  `vote` float DEFAULT NULL,
   `idUser` int DEFAULT NULL,
   `idSubject` int DEFAULT NULL,
   `date` date DEFAULT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE `feedbacks` (
   `idFeedback` int NOT NULL AUTO_INCREMENT,
   `idUser` int DEFAULT NULL,
   `idSubject` int DEFAULT NULL,
-  `stars` int DEFAULT NULL,
+  `rating` int DEFAULT NULL,
   `message` mediumtext,
   PRIMARY KEY (`idFeedback`),
   KEY `FK_Feedback_Users_idx` (`idUser`),
