@@ -4,7 +4,7 @@ services:
   web:
     build: .
     ports:
-      - "80:80"
+      - "2000:80"
     volumes:
       - ./app:/var/www/html/
     depends_on:
