@@ -92,7 +92,7 @@ if (session_status() == PHP_SESSION_NONE) {
         session_unset();
         session_destroy();
         echo'
-              <script>window.location.href="homePage.php";</script>
+              <script>window.location.href="index.php";</script>
             ';
         exit();
       }
