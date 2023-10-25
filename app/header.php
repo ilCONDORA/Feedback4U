@@ -59,7 +59,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 <body>
   <header class="header">
-    <a href="homePage.php"><img src="./images/logo.png" alt="logo FeedbackForU" class="logo" /></a>
+    <a href="index.php"><img src="./images/logo.png" alt="logo FeedbackForU" class="logo" /></a>
     <div>
       <?php
       if (isset($_SESSION["email"])) {
@@ -91,7 +91,9 @@ if (session_status() == PHP_SESSION_NONE) {
         // Se il parametro 'logout' è presente nell'URL, termina la sessione
         session_unset();
         session_destroy();
-        echo '<script>window.location.href="homePage.php";</script>';
+        echo'
+              <script>window.location.href="homePage.php";</script>
+            ';
         exit();
       }
       ?>

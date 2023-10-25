@@ -151,11 +151,11 @@ include 'connection.php';
                                     </div>
 
                                 ";
-                            echo"
-                                ";
                         }
                     } else {
-                        echo "<p>Nessun voto trovato</p>";
+                        echo"
+                                <p>Nessun voto trovato</p>
+                            ";
                     }
                 }
                 $conn->close();

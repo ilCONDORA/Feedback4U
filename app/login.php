@@ -86,14 +86,20 @@ include 'connection.php';
                         $_SESSION["email"] = $email;
                         $_SESSION["idRole"] = $row['idRole'];
 
-                        echo '<script>window.location.href="homePage.php";</script>';
+                        echo'
+                                <script>window.location.href="index.php";</script>
+                            ';
                         exit();
                     } else {
-                        echo "<p>Password errata</p>";
+                        echo"
+                                <p>Password errata</p>
+                            ";
                     }
                 }
             } else {
-                echo "<p>Utente non trovato!</p>";
+                echo"
+                        <p>Utente non trovato!</p>
+                    ";
             }
 
             $conn->close();

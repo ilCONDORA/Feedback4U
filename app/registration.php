@@ -95,14 +95,20 @@ include 'connection.php';
                         $_SESSION["email"] = $email;
                         $_SESSION["idRole"] = 2;
 
-                        echo '<script>window.location.href="homePage.php";</script>';
+                        echo'
+                                <script>window.location.href="index.php";</script>
+                            ';
                         exit();
                     } else {
-                        echo "<p>Error: " . $sql . "<br>" . $conn->error."</p>";
+                        echo"
+                                <p>Error: " . $sql . "<br>" . $conn->error."</p>
+                            ";
                     }
                 }
             } else {
-                echo "<p>Le password non corrispondono</p>";
+                echo"
+                        <p>Le password non corrispondono</p>
+                    ";
             }
 
             $conn->close();
